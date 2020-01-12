@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="<c:url value='/menu/mymenu.css'/>" type="text/css" media="all">
     <link rel="stylesheet" type="text/css" href="<c:url value='/jsps/css/left.css'/>">
     <script language="javascript">
-        var bar = new Q6MenuBar("bar", "昝氏网上书城");
+        var bar = new Q6MenuBar("bar", "昝氏网上书城1");
         $(function ()
         {
             bar.colorStyle = 4;
@@ -30,7 +30,8 @@
 
             <c:forEach items="${parents}" var="parent">
 				<c:forEach items="${parent.children}" var="child">
-					bar.add("${parent.cname}", "${child.cname}", "/goods/BookServlet?method=findByCategory&cid=${child.cid}", "body");
+					bar.add("${parent.cname}", "${child.cname}", "/BMS/BookServlet?method=findByCategory&cid=${child.cid}", "body");
+
 				</c:forEach>
             </c:forEach>
 
