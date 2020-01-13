@@ -25,7 +25,7 @@ a {text-decoration: none;}
   </head>
   
   <body>
-    <h1>欢迎进入昝氏网上书城系统</h1>
+    <h1>欢迎进入：船舶工程学院图书管理系统</h1>
     <a href="http://www.itcast.cn/" target="_top">
       <img src="http://localhost/goods/images/itcast_link.gif" border="0" style="border:1px #DCD8D7 solid;"/>
     </a>

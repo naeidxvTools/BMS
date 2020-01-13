@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
@@ -19,7 +19,7 @@
 <style type="text/css">
 	body {
 		background: #15B69A;
-		margin: 0px;
+		margin: 0;
 		color: #ffffff;
 	}
 	a {
@@ -35,15 +35,15 @@
   </head>
   
   <body>
-<h1 style="text-align: center;">昝氏书城网上书城系统</h1>
+<h1 style="text-align: center;">九职船舶工程学院图书管理系统</h1>
 <div style="font-size: 10pt; line-height: 10px;">
 <c:choose>
 	<c:when test="${empty sessionScope.sessionUser}">
-		<a href="<c:url value='/jsps/user/login.jsp'/>" target="_parent">书城会员登录</a> |&nbsp;
-		<a href="<c:url value='/jsps/user/regist.jsp'/>" target="_parent">注册书城会员</a>
+		<a href="<c:url value='/jsps/user/login.jsp'/>" target="_parent">图书会员登录</a> |&nbsp;
+		<a href="<c:url value='/jsps/user/regist.jsp'/>" target="_parent">注册图书会员</a>
 	</c:when>
 	<c:otherwise>
-		书城会员：${sessionScope.sessionUser.loginname}&nbsp;&nbsp;|&nbsp;&nbsp;
+		图书会员：${sessionScope.sessionUser.loginname}&nbsp;&nbsp;|&nbsp;&nbsp;
 		<a href="<c:url value='/CartItemServlet?method=myCart'/>" target="body">我的购物车</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 		<a href="<c:url value='/OrderServlet?method=myOrders'/>" target="body">我的昝氏订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 		<a href="<c:url value='/jsps/user/pwd.jsp'/>" target="body">修改密码</a>&nbsp;&nbsp;|&nbsp;&nbsp;

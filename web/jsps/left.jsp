@@ -1,7 +1,5 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
+<%@ page pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -20,8 +18,8 @@
     <script type="text/javascript" src="<c:url value='/menu/mymenu.js'/>"></script>
     <link rel="stylesheet" href="<c:url value='/menu/mymenu.css'/>" type="text/css" media="all">
     <link rel="stylesheet" type="text/css" href="<c:url value='/jsps/css/left.css'/>">
-    <script language="javascript">
-        var bar = new Q6MenuBar("bar", "昝氏网上书城");
+    <script type="text/javascript">
+        let bar = new Q6MenuBar("bar", "图书目录");
         $(function ()
         {
             bar.colorStyle = 4;
