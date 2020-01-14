@@ -22,7 +22,7 @@
 
 	<script type="text/javascript">
 
-		var bar = new Q6MenuBar("bar", "九江职院网上书城"); //对象名必须与第一个参数相同！
+		var bar = new Q6MenuBar("bar", "九江船舶图书"); //对象名必须与第一个参数相同！
 
 		$(function ()
 		{

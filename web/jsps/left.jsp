@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="<c:url value='/menu/mymenu.css'/>" type="text/css" media="all">
     <link rel="stylesheet" type="text/css" href="<c:url value='/jsps/css/left.css'/>">
     <script type="text/javascript">
-        let bar = new Q6MenuBar("bar", "图书目录");
+        let bar = new Q6MenuBar("bar", "九职船舶图书");
         $(function ()
         {
             bar.colorStyle = 4;
