@@ -7,6 +7,7 @@
     <groupId>net.imwork.zhanlong.BMS</groupId>
     <artifactId>BMS</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -62,15 +63,78 @@
     </dependencies>
 
     <build>
+        <!--部署web项目&启动tomcat服务器-->
+        <!--       如果不加一下语句，默认是项目名     -->
+        <finalName>struts2</finalName>
+
         <plugins>
+
+            <!-- Error assembling WAR: webxml attribute is required (or pre-existing WEB-INF/web-->
+            <!-- Web的maven项目默认的webroot是在src\main\webapp。如果在此目录下找不到web.xml就抛出以上的异常。 -->
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.3</version>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>web</directory>
+                        </resource>
+                    </webResources>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+
             </plugin>
+
+            <plugin>
+                <!-- cargo是一家专门从 "启动Servlet容器" 的组织 -->
+                <groupId>org.codehaus.cargo</groupId>
+                <artifactId>cargo-maven2-plugin</artifactId>
+                <version>1.7.10</version>
+                <!-- 针对插件进行的配置 -->
+                <configuration>
+                    <!-- 配置当前系统中容器的位置 -->
+                    <container>
+                        <containerId>tomcat8x</containerId>
+                        <home>C:\java_software\apache-tomcat-8.5.38</home>
+                    </container>
+                    <configuration>
+                        <type>existing</type>
+                        <home>C:\java_software\apache-tomcat-8.5.38</home>
+                        <!-- 如果Tomcat端口为默认值8080则不必设置该属性(好像我
+                        测试这个属性无用) -->
+                        <properties>
+                            <cargo.servlet.port>80</cargo.servlet.port>
+                        </properties>
+                    </configuration>
+                </configuration>
+
+                <!-- 配置插件在什么情况下执行 -->
+                <executions>
+                    <execution>
+                        <id>cargo-run</id>
+
+                        <!-- 生命周期的阶段 -->
+                        <phase>install</phase>
+                        <goals>
+                            <!-- 插件的目标 -->
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
+
     </build>
 
 </project>
