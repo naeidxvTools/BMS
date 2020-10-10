@@ -31,10 +31,10 @@
 			bar.config.radioButton = true;//是否排斥，多个一级分类是否排斥
 
 			/*
-            ********bar.add("程序设计", "Java Javascript", "/goods/jsps/book/list.jsp", "body");**********
+            ********bar.add("程序设计", "Java Javascript", "/BMS/jsps/book/list.jsp", "body");**********
             1.程序设计：一级分类名称
             2.Java JavaScript：二级分类名称
-            3./goods/jsps/book/list.jsp：点击二级分类后链接的URL
+            3./BMS/jsps/book/list.jsp：点击二级分类后链接的URL
             4.body：链接的内容在哪个框架页显示
              */
 			<c:forEach items="${parents}" var="parent">

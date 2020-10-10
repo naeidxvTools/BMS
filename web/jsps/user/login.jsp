@@ -13,7 +13,7 @@
     <title>登录</title>
     <link rel="stylesheet" type="text/css" href="<c:url value='/jsps/css/user/login.css'/>">
     <script type="text/javascript" src="<c:url value='/jquery/jquery-3.4.0.js'/>"></script>
-    <script type="text/javascript" src="<c:url value='/jsps/js/user/login.js'/> "></script>
+    <script type="text/javascript" src="<c:url value='/jsps/js/user/login.js'/>"></script>
     <script src="<c:url value='/js/common.js'/>"></script>
 
     <script type="text/javascript">

@@ -4,9 +4,9 @@
 <head>
     <title>注册页面</title>
     <link rel="stylesheet" href="<c:url value='/jsps/css/user/regist.css'/>" type="text/css">
-    <script type="text/javascript" src="<c:url value='/jquery/jquery-3.4.0.js'/> "></script>
-    <script type="text/javascript" src="<c:url value='/jsps/js/user/regist.js'/> "></script>
-    <script type="text/javascript" src="<c:url value='/js/common.js'/> "></script>
+    <script type="text/javascript" src="<c:url value='/jquery/jquery-3.4.0.js'/>"></script>
+    <script type="text/javascript" src="<c:url value='/jsps/js/user/world.js'/>"></script>
+    <script type="text/javascript" src="<c:url value='/js/common.js'/>"></script>
 </head>
 <body>
 <div id="divMain">

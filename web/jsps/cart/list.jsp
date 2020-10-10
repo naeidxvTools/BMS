@@ -70,7 +70,7 @@
                 {
                     if (confirm("您是否真要删除该条目？"))
                     {
-						location = "/goods/CartItemServlet?method=batchDelete&cartItemIds=" + cartItemId;
+						location = "/BMS/CartItemServlet?method=batchDelete&cartItemIds=" + cartItemId;
                     }
                 } else
                 {
@@ -167,7 +167,7 @@
             {
                 cartItemIdArray.push($(this).val());//把复选框的值添加到数组中
             });
-            location = "/goods/CartItemServlet?method=batchDelete&cartItemIds=" + cartItemIdArray;
+            location = "/BMS/CartItemServlet?method=batchDelete&cartItemIds=" + cartItemIdArray;
         }
 
         //结算
