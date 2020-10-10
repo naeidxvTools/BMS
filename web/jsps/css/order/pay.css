@@ -54,7 +54,7 @@ img {
 }
 
 .linkNext {
-	/*background: url(/BMS/images/icon2.png) no-repeat;*/
+	/*background: url(/bms/images/icon2.png) no-repeat;*/
 	display: inline-block;
 	background: url(../../../images/icon2.png) no-repeat 0 -35px;
 	height: 40px;
