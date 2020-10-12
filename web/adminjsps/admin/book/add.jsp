@@ -81,7 +81,7 @@
 			$.ajax({
 				async:true,
 				cache:false,
-				url:"/goods/admin/AdminBookServlet",
+				url:"/BMS/admin/AdminBookServlet",
 				data:{method:"ajaxFindChildren",pid:pid},
 				dataType:"json",
 				type:"POST",

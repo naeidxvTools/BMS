@@ -26,7 +26,7 @@ a {text-decoration: none;}
   
   <body>
     <h1>欢迎进入：船舶工程学院图书管理系统</h1>
-    <a href="http://www.baidu.com/" target="_top">
+    <a href="http://jvtc.jx.cn/" target="_top">
       <img src="http://localhost/BMS/images/timg.png" border="0" style="width:600px;height: 400px;border:1px #DCD8D7 solid;"/>
     </a>
 
