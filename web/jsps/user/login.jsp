@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='/jsps/css/user/login.css'/>">
     <script type="text/javascript" src="<c:url value='/jquery/jquery-3.4.0.js'/>"></script>
     <script type="text/javascript" src="<c:url value='/jsps/js/user/login.js'/>"></script>
-    <script src="<c:url value='/js/common.js'/>"></script>
+    <script type="text/javascript" src="<c:url value='/js/common.js'/>"></script>
 
     <script type="text/javascript">
         $(function ()
@@ -69,7 +69,7 @@
                                 <td>验证码</td>
                                 <td>
                                     <input class="input yzm" type="text" name="verifyCode" id="verifyCode" value="${user.verifyCode}"/>
-                                    <img id="imgVerifyCode" src="<c:url value='/VerifyCodeServlet'/> "/>
+                                    <img id="imgVerifyCode" src="<c:url value='/VerifyCodeServlet'/>"/>
                                     <a id="aVerifyCode" href="javascript:_change();">换张图</a>
                                 </td>
                             </tr>
