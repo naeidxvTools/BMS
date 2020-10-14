@@ -30,9 +30,9 @@
     <img align="top" src="<c:url value='/${book.image_w}'/>" class="img_image_w"/>
     <div class="divBookDesc">
 	    <ul>
-	    	<li>商品编号：${book.bid}</li>
-	    	<li>当前价：<span class="price_n">&yen;${book.currPrice}</span></li>
-	    	<li>定价：<span class="spanPrice">&yen;${book.price}</span>　折扣：<span style="color: #c30;">${book.discount}</span>折</li>
+	    	<li>图书编号：${book.bid}</li>
+<%--	    	<li>当前价：<span class="price_n">&yen;${book.currPrice}</span></li>--%>
+<%--	    	<li>定价：<span class="spanPrice">&yen;${book.price}</span>　折扣：<span style="color: #c30;">${book.discount}</span>折</li>--%>
 	    </ul>
 		<hr class="hr1"/>
 		<table>
@@ -44,6 +44,11 @@
 			<tr>
 				<td colspan="3">
 					出版社：${book.press}
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					定价：${book.currPrice}
 				</td>
 			</tr>
 			<tr>
@@ -64,7 +69,7 @@
 			<form id="form1" action="<c:url value='/CartItemServlet'/>" method="post">
 				<input type="hidden" name="method" value="add"/>
 				<input type="hidden" name="bid" value="${book.bid}"/>
-  				我要买：<input id="cnt" style="width: 40px;text-align: center;" type="text" name="quantity" value="1"/>件
+  				我要借阅：<input id="cnt" style="width: 40px;text-align: center;" type="text" name="quantity" value="1"/>件
   			</form>
   			<a id="btn" href="javascript:$('#form1').submit();"></a>
   		</div>	

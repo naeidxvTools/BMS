@@ -30,11 +30,11 @@
             <div class="inner">
                 <a class="pic" href="<c:url value='/BookServlet?method=load&bid=${book.bid}'/>"><img
                         src="<c:url value='/${book.image_b}'/>" border="0"/></a>
-                <p class="price">
-                    <span class="price_n">&yen;${book.currPrice}</span>
-                    <span class="price_r">&yen;${book.price}</span>
-                    (<span class="price_s">${book.discount}折</span>)
-                </p>
+<%--                <p class="price">--%>
+<%--                    <span class="price_n">&yen;${book.currPrice}</span>--%>
+<%--                    <span class="price_r">&yen;${book.price}</span>--%>
+<%--                    (<span class="price_s">${book.discount}折</span>)--%>
+<%--                </p>--%>
                 <p><a id="bname" title="${book.bname}" href="<c:url value='/BookServlet?method=load&bid=${book.bid}'/>">${book.bname}</a></p>
 
                     <%--url标签会自动对参数进行url编码--%>
@@ -47,10 +47,11 @@
                     <c:param name="press" value="${book.press}"></c:param>
                 </c:url>
 <%--                    <p><a href="<c:url value='/BookServlet?method=findByAuthor&author=${book.author}'/>" name='P_zz' title='${book.author}'>${book.author}</a></p>--%>
-                <p><a href="${authorUrl}" name='P_zz' title='${book.author}'>${book.author}</a></p>
+                <p><span>作者：</span><a href="${authorUrl}" name='P_zz' title='${book.author}'>${book.author}</a></p>
                 <p class="publishing"><span>出 版 社：</span><a href="<c:url value='/BookServlet?method=findByPress&press=${book.press}'/>">${book.press}</a></p>
 <%--                <p class="publishing"><span>出 版 社：</span><a href="${pressUrl}">${book.press}</a></p>--%>
                 <p class="publishing_time"><span>出版时间：</span>${book.publishtime}</p>
+                <p class="price"><span class="price_n">定价：&yen;${book.currPrice}</span></p>
             </div>
         </li>
     </c:forEach>
