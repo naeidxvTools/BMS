@@ -72,14 +72,14 @@ li {
 
 #btn {
     display: inline-block;
-    background: url(../../../images/all.png) no-repeat 0 -70px;
+    background: url(../../../images/all00.png) no-repeat 0 -70px;
     height: 36px;
     width: 146px;
 }
 
 #btn:HOVER {
     display: inline-block;
-    background: url(../../../images/all.png) no-repeat 0 -106px;
+    background: url(../../../images/all00.png) no-repeat 0 -106px;
     height: 36px;
     width: 146px;
 }
