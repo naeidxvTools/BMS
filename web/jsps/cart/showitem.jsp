@@ -41,7 +41,7 @@
 	<input type="hidden" name="method" value="createOrder"/>
 <table width="95%" align="center" cellpadding="0" cellspacing="0">
 	<tr bgcolor="#efeae5">
-		<td width="400px" colspan="5"><span style="font-weight: 900;">生成订单</span></td>
+		<td width="400px" colspan="5"><span style="font-weight: 900;">生成借阅单</span></td>
 	</tr>
 	<tr align="center">
 		<td width="10%">&nbsp;</td>
@@ -76,14 +76,7 @@
 			<span>总计：</span><span class="price_t">&yen;<span id="total">${total}</span></span>
 		</td>
 	</tr>
-	<tr>
-		<td colspan="5" bgcolor="#efeae5"><span style="font-weight: 900">收货地址</span></td>
-	</tr>
-	<tr>
-		<td colspan="6">
-			<input id="addr" type="text" name="address" value="江西省 九江市 十里大道1188号 九江职业技术学院船舶工程学院 2#-113 昝海龙"/>
-		</td>
-	</tr>
+
 	<tr>
 		<td style="border-top-width: 4px;" colspan="5" align="right">
 			<a id="linkSubmit" href="javascript:$('#form1').submit();">提交订单</a>

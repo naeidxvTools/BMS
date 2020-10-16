@@ -45,7 +45,7 @@
 	<c:otherwise>
 		图书会员：${sessionScope.sessionUser.loginname}&nbsp;&nbsp;|&nbsp;&nbsp;
 		<a href="<c:url value='/CartItemServlet?method=myCart'/>" target="body">我的借阅车</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-		<a href="<c:url value='/OrderServlet?method=myOrders'/>" target="body">我的借阅单</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="<c:url value='/OrderServlet?method=myOrders'/>" target="body">我的借阅清单</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 		<a href="<c:url value='/jsps/user/pwd.jsp'/>" target="body">修改密码</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 		<a href="<c:url value='/UserServlet?method=quit'/>" target="_parent">退出</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 		<a href="http://www.baidu.com" target="_top">联系我们</a>

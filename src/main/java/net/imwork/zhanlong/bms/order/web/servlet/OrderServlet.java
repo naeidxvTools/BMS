@@ -196,22 +196,6 @@ public class OrderServlet extends BaseServlet
     }
 
     /**
-     * 支付准备
-     * @param request
-     * @param response
-     * @return
-     * @throws ServletException
-     * @throws IOException
-     */
-    public String paymentPre(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException
-    {
-        request.setAttribute("order", orderService.load(request.getParameter("oid")));
-        System.out.println("paymentPre().......");
-        return "f:/jsps/order/pay.jsp";
-    }
-
-    /**
      * 取消订单
      * @param request
      * @param response
@@ -338,7 +322,8 @@ public class OrderServlet extends BaseServlet
 
         //5.保存订单，转发到ordersucc.jsp
         request.setAttribute("order", order);
-        return "f:/jsps/order/ordersucc.jsp";
+//        return "f:/jsps/order/ordersucc.jsp";
+        return "f:/OrderServlet?method=myOrders";
     }
 
 

@@ -199,7 +199,7 @@
                     <img align="top" src="<c:url value='/images/icon_empty.png'/>"/>
                 </td>
                 <td>
-                    <span class="spanEmpty">您的购物车中暂时没有商品</span>
+                    <span class="spanEmpty">您的借阅车中暂时为空</span>
                 </td>
             </tr>
         </table>

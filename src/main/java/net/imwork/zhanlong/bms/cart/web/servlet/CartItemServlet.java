@@ -38,6 +38,7 @@ public class CartItemServlet extends BaseServlet
         request.setAttribute("cartItemIds", cartItemIds);
         request.setAttribute("total", total);
         return "f:/jsps/cart/showitem.jsp";
+//        return "f:/jsps/order/list.jsp";
     }
 
     /**
