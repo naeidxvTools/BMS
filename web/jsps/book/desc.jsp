@@ -31,38 +31,33 @@
     <div class="divBookDesc">
 	    <ul>
 	    	<li>图书编号：${book.bid}</li>
-<%--	    	<li>当前价：<span class="price_n">&yen;${book.currPrice}</span></li>--%>
-<%--	    	<li>定价：<span class="spanPrice">&yen;${book.price}</span>　折扣：<span style="color: #c30;">${book.discount}</span>折</li>--%>
+			<li>登记编号：${book.registrationNumber}</li>
 	    </ul>
 		<hr class="hr1"/>
 		<table>
 			<tr>
-				<td colspan="3">
+				<td colspan="2">
 					作者：${book.author} 著
 				</td>
 			</tr>
 			<tr>
-				<td colspan="3">
+				<td colspan="2">
 					出版社：${book.press}
 				</td>
+				<td colspan="2">出版时间：${book.publishtime}</td>
 			</tr>
 			<tr>
-				<td colspan="3">
+				<td colspan="2">版次：${book.edition}</td>
+				<td>页数：${book.pageNum}</td>
+			</tr>
+			<tr>
+				<td colspan="2">印刷时间：${book.printtime}</td>
+				<td>开本：${book.booksize} 开</td>
+			</tr>
+			<tr>
+				<td colspan="2">
 					定价：${book.currPrice}
 				</td>
-			</tr>
-			<tr>
-				<td colspan="3">出版时间：${book.publishtime}</td>
-			</tr>
-			<tr>
-				<td>版次：${book.edition}</td>
-				<td>页数：${book.pageNum}</td>
-				<td>字数：${book.wordNum}</td>
-			</tr>
-			<tr>
-				<td width="180">印刷时间：${book.printtime}</td>
-				<td>开本：${book.booksize} 开</td>
-				<td>纸张：${book.paper}</td>
 			</tr>
 		</table>
 		<div class="divForm">
