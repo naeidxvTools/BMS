@@ -27,25 +27,22 @@
 	<br/>
 	<table align="center" border="0" width="100%" cellpadding="0" cellspacing="0">
 
+		<c:forEach items="${pb.beanList}" var="order">
+				<tr class="tt">
+					<td width="320px">借阅号：<a  href="<c:url value='/OrderServlet?method=load&oid=${order.oid}'/>">${order.oid}</a></td>
+					<td width="200px">借阅时间：${order.ordertime}</td>
+				</tr>
 
-<c:forEach items="${pb.beanList}" var="order">
-		<tr class="tt">
-			<td width="320px">借阅号：<a  href="<c:url value='/OrderServlet?method=load&oid=${order.oid}'/>">${order.oid}</a></td>
-			<td width="200px">借阅时间：${order.ordertime}</td>
-		</tr>
-
-		<tr style="padding-top: 10px; padding-bottom: 10px;">
-			<td colspan="2">
-				<c:forEach items="${order.orderItemList}" var="orderItem">
-					<a class="link2" href="<c:url value='/BookServlet?method=load&bid=${orderItem.book.bid}'/>">
-						<img border="0" width="70" src="<c:url value='/${orderItem.book.image_b}'/>"/>
-					</a>
-				</c:forEach>
-			</td>
-		</tr>
-
-</c:forEach>
-
+				<tr style="padding-top: 10px; padding-bottom: 10px;">
+					<td colspan="2">
+						<c:forEach items="${order.orderItemList}" var="orderItem">
+							<a class="link2" href="<c:url value='/BookServlet?method=load&bid=${orderItem.book.bid}'/>">
+								<img border="0" width="70" src="<c:url value='/${orderItem.book.image_b}'/>"/>
+							</a>
+						</c:forEach>
+					</td>
+				</tr>
+		</c:forEach>
 
 	</table>
 	<br/>

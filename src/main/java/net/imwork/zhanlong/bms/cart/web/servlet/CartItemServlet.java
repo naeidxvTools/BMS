@@ -32,13 +32,13 @@ public class CartItemServlet extends BaseServlet
             throws ServletException, IOException
     {
         String cartItemIds = request.getParameter("cartItemIds");
-        double total = Double.parseDouble(request.getParameter("total"));
+        //double total = Double.parseDouble(request.getParameter("total"));
         List<CartItem> cartItemList = cartItemService.loadCartItems(cartItemIds);
         request.setAttribute("cartItemList",cartItemList);
         request.setAttribute("cartItemIds", cartItemIds);
-        request.setAttribute("total", total);
-        return "f:/jsps/cart/showitem.jsp";
+
 //        return "f:/jsps/order/list.jsp";
+        return "f:/OrderServlet?method=createOrder";
     }
 
     /**
@@ -63,7 +63,6 @@ public class CartItemServlet extends BaseServlet
         sb.append("\"subtotal\"").append(":").append(cartItem.getSubtotal());
 
         sb.append("}");
-        System.out.println(sb);
         response.getWriter().print(sb);
 
         return null;

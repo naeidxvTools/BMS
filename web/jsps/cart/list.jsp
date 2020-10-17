@@ -24,7 +24,7 @@
 
         $(function ()
         {
-            showTotal();//计算总计
+            //showTotal();//计算总计
 
             //给全选按钮添加click事件
             $("#selectAll").click(function ()
@@ -70,7 +70,7 @@
                 {
                     if (confirm("您是否真要删除该条目？"))
                     {
-						location = "/bms/CartItemServlet?method=batchDelete&cartItemIds=" + cartItemId;
+						location = "/BMS/CartItemServlet?method=batchDelete&cartItemIds=" + cartItemId;
                     }
                 } else
                 {
@@ -93,12 +93,11 @@
                 */
 				let input = $("#" + cartItemId + "Quantity");
 				let subtotal = $("#" + cartItemId + "Subtotal");
-				let currPrice = $("#" + cartItemId + "CurrPrice");
 
 				$.ajax({
 					async:false,
 					cache:false,
-					url:"/goods/CartItemServlet",
+					url:"/BMS/CartItemServlet",
 					data:{method:"updateQuantity",cartItemId:cartItemId,quantity:quantity},
 					type:"POST",
 					dataType:"json",
@@ -167,7 +166,7 @@
             {
                 cartItemIdArray.push($(this).val());//把复选框的值添加到数组中
             });
-            location = "/bms/CartItemServlet?method=batchDelete&cartItemIds=" + cartItemIdArray;
+            location = "/BMS/CartItemServlet?method=batchDelete&cartItemIds=" + cartItemIdArray;
         }
 
         //结算
@@ -183,6 +182,7 @@
             $("#cartItemIds").val(cartItemIdArray.toString());
             //把总计的值，也保存到表单中
             $("#hiddenTotal").val($("#total").text());
+
             //3.提交这个表单
             $("#jieSuanForm").submit();
         }
@@ -224,7 +224,7 @@
                         <input value="${cartItem.cartItemId}" type="checkbox" name="checkboxBtn" checked="checked"/>
                     </td>
                     <td align="left" width="70px">
-                        <a class="linkImage" href="<c:url value='/jsps/book/desc.jsp'/>"><img border="0" width="54"
+                        <a class="linkImage" href="<c:url value='/BookServlet?method=load&bid=${cartItem.book.bid}'/>"><img border="0" width="54"
                                                                                               align="top"
                                                                                               src="<c:url value='/${cartItem.book.image_b}'/>"/></a>
                     </td>
@@ -249,13 +249,9 @@
                 </tr>
             </c:forEach>
 
-
             <tr>
                 <td colspan="4" class="tdBatchDelete">
                     <a href="javascript:batchDelete();">批量删除</a>
-                </td>
-                <td colspan="3" align="right" class="tdTotal">
-                    <span>总计：</span><span class="price_t">&yen;<span id="total"></span></span>
                 </td>
             </tr>
             <tr>

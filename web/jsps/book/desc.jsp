@@ -69,7 +69,7 @@
 			<form id="form1" action="<c:url value='/CartItemServlet'/>" method="post">
 				<input type="hidden" name="method" value="add"/>
 				<input type="hidden" name="bid" value="${book.bid}"/>
-  				我要借阅：<input id="cnt" style="width: 40px;text-align: center;" type="text" name="quantity" value="1"/>件
+<%--  				我要借阅：<input id="cnt" style="width: 40px;text-align: center;" type="text" name="quantity" value="1"/>件--%>
   			</form>
   			<a id="btn" href="javascript:$('#form1').submit();"></a>
   		</div>	

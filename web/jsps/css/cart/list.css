@@ -53,6 +53,13 @@ td {
     width: 190px;
     margin: 0;
 }
+.jiesuan:HOVER {
+    display: inline-block;
+    background: url(../../../images/icon.png) no-repeat 0 -75px;
+    height: 40px;
+    width: 190px;
+    poorfish: expression(this.onclick = function jiesuan(){return true});
+}
 
 .kill {
     display: inline-block;
@@ -61,13 +68,7 @@ td {
     width: 190px;
 }
 
-.jiesuan:HOVER {
-    display: inline-block;
-    background: url(../../../images/icon.png) no-repeat 0 -75px;
-    height: 40px;
-    width: 190px;
-    poorfish: expression(this.onclick = function jiesuan(){return true});
-}
+
 
 .quantity {
     width: 25px;
