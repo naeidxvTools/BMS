@@ -30,6 +30,7 @@
 		<c:forEach items="${pb.beanList}" var="order">
 				<tr class="tt">
 					<td width="320px">借阅号：<a  href="<c:url value='/OrderServlet?method=load&oid=${order.oid}'/>">${order.oid}</a></td>
+					<td width="200px">登记编号：${cartItemList}</td>
 					<td width="200px">借阅时间：${order.ordertime}</td>
 				</tr>
 

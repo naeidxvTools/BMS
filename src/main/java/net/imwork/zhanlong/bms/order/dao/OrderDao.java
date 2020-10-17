@@ -99,7 +99,8 @@ public class OrderDao
     {
         List<Expression> expressions = new ArrayList<>();
         expressions.add(new Expression("uid", "=", uid));
-        return findByCriteria(expressions, pc);
+        PageBean<Order> orderPageBean = findByCriteria(expressions, pc);
+        return orderPageBean;
     }
 
     /**

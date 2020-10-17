@@ -347,11 +347,16 @@ public class OrderServlet extends BaseServlet
         //3.从当前session中获取User
         User user = (User) request.getSession().getAttribute("sessionUser");
 
+        //request.setAttribute("cartItemList",cartItemList);
+//        List<CartItem> cartItemList = (List<CartItem>) request.getAttribute("cartItemList");
+//        System.out.println("cartItemList = .........." + cartItemList);
+
         //4.使用pc和cid调用service#findByCategory得到PageBean
         PageBean<Order> pb = orderService.myOrders(user.getUid(), pc);
 
         //5.给PageBean设置url，保存PageBean，转发到/jsps/book/list.jsp
         pb.setUrl(url);
+
         request.setAttribute("pb", pb);
         return "/jsps/order/list.jsp";
     }

@@ -212,8 +212,7 @@
                 </td>
                 <td colspan="2">商品名称</td>
                 <td>单价</td>
-                <td>数量</td>
-                <td>小计</td>
+                <td>登记编号</td>
                 <td>操作</td>
             </tr>
 
@@ -232,16 +231,8 @@
                         <a href="<c:url value='/jsps/book/desc.jsp'/>"><span>${cartItem.book.bname}</span></a>
                     </td>
                     <td><span>&yen;<span class="currPrice">${cartItem.book.currPrice}</span></span></td>
-                    <td>
-                        <a class="jian" id="${cartItem.cartItemId}Jian"></a><input class="quantity" readonly="readonly"
-                                                                                   id="${cartItem.cartItemId}Quantity"
-                                                                                   type="text"
-                                                                                   value="${cartItem.quantity}"/><a
-                            class="jia" id="${cartItem.cartItemId}Jia"></a>
-                    </td>
                     <td width="100px">
-                        <span class="price_n">&yen;<span class="subTotal"
-                                                         id="${cartItem.cartItemId}Subtotal">${cartItem.subtotal}</span></span>
+                        <span class="price_n">${cartItem.book.registrationNumber}</span>
                     </td>
                     <td>
                         <a href="<c:url value='/CartItemServlet?method=batchDelete&cartItemIds=${cartItem.cartItemId}'/>">删除</a>

@@ -126,7 +126,7 @@
 			<tr>
 				<td width="180">印刷时间：${book.printtime}</td>
 				<td>开本：${book.booksize}开</td>
-				<td>纸张：${book.paper}</td>
+				<td>登记编号：${book.registrationNumber}</td>
 			</tr>
 		</table>
 	</div>
@@ -170,7 +170,7 @@
 				<tr>
 					<td width="250px">印刷时间：<input id="printtime" type="text" name="printtime" value="${book.printtime}" style="width:100px;"/></td>
 					<td width="250px">开本：　　<input id="booksize" type="text" name="booksize" value="${book.booksize}" style="width:30px;"/></td>
-					<td>纸张：　　<input id="paper" type="text" name="paper" value="${book.paper}" style="width:80px;"/></td>
+					<td>登记编号：　　<input id="paper" type="text" name="paper" value="${book.registrationNumber}" style="width:80px;"/></td>
 				</tr>
 				<tr>
 					<td>

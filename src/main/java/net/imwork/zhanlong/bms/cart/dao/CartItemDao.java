@@ -28,7 +28,8 @@ public class CartItemDao
         Object[] cartItemIdArray = cartItemIds.split(",");
         String whereSql = toWhereSql(cartItemIdArray.length);
         String sql = "select * from t_cartitem c, t_book b where c.bid=b.bid and " + whereSql;
-        return toCartItemList(queryRunner.query(sql, new MapListHandler(), cartItemIdArray));//其中cartItemIdArray必须是Object类型的数组
+        List<CartItem> cartItems = toCartItemList(queryRunner.query(sql, new MapListHandler(), cartItemIdArray));//其中cartItemIdArray必须是Object类型的数组
+        return cartItems;
     }
 
     /**

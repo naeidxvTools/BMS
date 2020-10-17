@@ -54,7 +54,6 @@
 															<span>&yen;${item.subtotal}</span>
 														</td>
 													</tr>
-
 							</c:forEach>
 					</table>
 				</dd>

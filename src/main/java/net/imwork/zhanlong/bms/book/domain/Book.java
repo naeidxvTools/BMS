@@ -20,7 +20,7 @@ public class Book
     private int wordNum;//字数
     private String printtime;//印刷时间
     private int booksize;//开本
-    private String paper;//纸质
+    private String registrationNumber;//登记编号
     private Category category;//所属分类
     private String image_b;//小图路径
     private String image_w;//大图路径
@@ -42,7 +42,7 @@ public class Book
                 ", wordNum=" + wordNum +
                 ", printtime='" + printtime + '\'' +
                 ", booksize=" + booksize +
-                ", paper='" + paper + '\'' +
+                ", registrationNumber='" + registrationNumber + '\'' +
                 ", category=" + category +
                 ", image_b='" + image_b + '\'' +
                 ", image_w='" + image_w + '\'' +
@@ -179,14 +179,14 @@ public class Book
         this.booksize = booksize;
     }
 
-    public String getPaper()
+    public String getRegistrationNumber()
     {
-        return paper;
+        return registrationNumber;
     }
 
-    public void setPaper(String paper)
+    public void setRegistrationNumber(String registrationNumber)
     {
-        this.paper = paper;
+        this.registrationNumber = registrationNumber;
     }
 
     public Category getCategory()
