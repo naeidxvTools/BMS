@@ -1,4 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page import="net.imwork.zhanlong.bms.cart.domain.CartItem" %>
+<%@ page import="net.imwork.zhanlong.bms.order.domain.Order" %>
+<%@ page import="net.imwork.zhanlong.bms.pager.PageBean" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -22,6 +25,7 @@
   </head>
   
   <body>
+
 <div class="divMain">
 	<div class="divTitle" align="center"><b>借阅信息</b></div>
 	<br/>
@@ -30,7 +34,7 @@
 		<c:forEach items="${pb.beanList}" var="order">
 				<tr class="tt">
 					<td width="320px">借阅号：<a  href="<c:url value='/OrderServlet?method=load&oid=${order.oid}'/>">${order.oid}</a></td>
-					<td width="200px">登记编号：${cartItemList}</td>
+
 					<td width="200px">借阅时间：${order.ordertime}</td>
 				</tr>
 
@@ -38,7 +42,7 @@
 					<td colspan="2">
 						<c:forEach items="${order.orderItemList}" var="orderItem">
 							<a class="link2" href="<c:url value='/BookServlet?method=load&bid=${orderItem.book.bid}'/>">
-								<img border="0" width="70" src="<c:url value='/${orderItem.book.image_b}'/>"/>
+								<img border="0" width="70" src="<c:url value='/${orderItem.book.image_b}'/>"/><--${orderItem.book.registrationNumber}
 							</a>
 						</c:forEach>
 					</td>

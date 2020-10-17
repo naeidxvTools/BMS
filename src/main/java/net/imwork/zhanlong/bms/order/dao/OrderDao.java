@@ -75,14 +75,14 @@ public class OrderDao
         //2.循环遍历订单的所有条目，让每个条目生成一个Object[]
         //多个条目对应Object[][]
         //执行批处理，完成插入订单条目
-        sql = "insert into t_orderitem values (?,?,?,?,?,?,?,?)";
+        sql = "insert into t_orderitem values (?,?,?,?,?,?,?,?,?)";
         int len = order.getOrderItemList().size();
         Object[][] objs = new Object[len][];
         for (int i = 0; i < len; i++)
         {
             OrderItem item = order.getOrderItemList().get(i);
             objs[i] = new Object[]{item.getOrderItemId(),item.getQuantity(),item.getSubtotal(),
-                    item.getBook().getBid(),item.getBook().getBname(),item.getBook().getCurrPrice(),
+                    item.getBook().getBid(),item.getBook().getBname(),item.getBook().getRegistrationNumber(),item.getBook().getCurrPrice(),
                     item.getBook().getImage_b(),order.getOid()};
         }
         queryRunner.batch(sql, objs);
@@ -175,6 +175,7 @@ public class OrderDao
         4.得到beanList，即当前页记录
          */
         sql = "select * from t_order" + whereSql + " order by ordertime desc limit ?, ?";
+
         params.add((pc - 1) * ps);
         params.add(ps);
         List<Order> beanList = queryRunner.query(sql, new BeanListHandler<>(Order.class), params.toArray());

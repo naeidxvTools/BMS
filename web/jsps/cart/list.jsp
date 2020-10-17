@@ -24,8 +24,6 @@
 
         $(function ()
         {
-            //showTotal();//计算总计
-
             //给全选按钮添加click事件
             $("#selectAll").click(function ()
             {
@@ -35,8 +33,6 @@
                 setItemCheckBox(bool);
                 //3.让结算按钮与全选同步
                 setJieSuan(bool);
-                //4.重新计算总计
-                showTotal();
             });
 
             // 给所有条目复选框添加click事件
@@ -57,7 +53,6 @@
                     $("#selectAll").attr("checked", false);//撤消全选复选框
                     setJieSuan(true);//使结算按钮可用
                 }
-                showTotal();//重新计算合计
             });
 
 
@@ -105,7 +100,6 @@
 					{
 						input.val(res.quantity);
 						subtotal.text(res.subtotal);
-						showTotal();
 					}
 				});
             }
@@ -132,27 +126,6 @@
         function setItemCheckBox(bool)
         {
             $(":checkbox[name=checkboxBtn]").attr("checked", bool);//让所有条目的复选框与参数bool同步
-        }
-
-        // 计算总计
-        function showTotal()
-        {
-            let total = 0;//创建total，准备累加
-            /*
-            1. 获取所有被勾选的复选框，遍历之
-            */
-            $(":checkbox[name=checkboxBtn][checked=true]").each(function ()
-            {
-                /*
-                2. 通过复选框找到小计
-                */
-                let subtotal = Number($("#" + $(this).val() + "Subtotal").text());
-                total += subtotal;
-            });
-            /*
-            3. 设置合计
-            */
-            $("#total").text(round(total, 2));
         }
 
         //批量删除

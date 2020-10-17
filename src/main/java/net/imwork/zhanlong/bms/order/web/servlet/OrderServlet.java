@@ -357,7 +357,7 @@ public class OrderServlet extends BaseServlet
         //5.给PageBean设置url，保存PageBean，转发到/jsps/book/list.jsp
         pb.setUrl(url);
 
-        request.setAttribute("pb", pb);
+        request.setAttribute("pb", pb);//pb中的book里的registrationNumber='null'????
         return "/jsps/order/list.jsp";
     }
 

@@ -22,6 +22,13 @@
 	
 	<link rel="stylesheet" type="text/css" href="<c:url value='/jsps/css/book/desc.css'/>">
 	<script src="<c:url value='/jsps/js/book/desc.js'/>"></script>
+	  <script type="text/javascript">
+		  $(function ()
+		  {
+			  alert("ok");
+
+		  });
+	  </script>
   </head>
   
   <body>
