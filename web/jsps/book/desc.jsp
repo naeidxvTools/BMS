@@ -31,23 +31,30 @@
 			  // 异步请求，查询数据库是否借阅
 			  function queryBorrow()
 			  {
-			  	let bianhao = $("#bianhao").text();  // ok
-
+				let bookNo = $("#bookNO").text();
 			  	$.ajax({
 					  async:false,
 					  cache:false,
 					  url:"/BMS/BookServlet",
-					  data:{method:"queryBorrow",no:bianhao},
+					  data:{method:"queryBorrow",no:bookNo},
 					  type:"POST",
 					  dataType:"json",
 					  success: function (res)
 					  {
-						  if (res.no == bianhao)
+						  if (res.no == bookNo)
 						  {
+						  	/*
+								$("#jiesuan").removeClass("jiesuan").addClass("kill");//切换样式
+								$("#jiesuan").click(function ()
+								{//使其"点击无效"
+									return false;
+								});
+						  	 */
+							  $("#btn").removeClass("btn").addClass("kill");//切换样式
 							  $("#btn").click(function ()
 							  {
-							  	 alert("你选择的图书已经被接走了，请请选择其他的图书！")
-							  	 return true;
+							  	 alert("你选择的图书已经被接走了，请请选择其他的图书！");
+							  	 return false;
 							  });
 						  }
 					  }
@@ -100,7 +107,7 @@
     <img align="top" src="<c:url value='/${book.image_w}'/>" class="img_image_w"/>
     <div class="divBookDesc">
 	    <ul>
-	    	<li>图书编号：${book.bid}</li>
+			<li>图书编号：<div id="bookNO">${book.bid}</div></li>
 			<li>登记编号：<div id="bianhao">${book.registrationNumber}</div></li>
 	    </ul>
 		<hr class="hr1"/>
@@ -136,7 +143,7 @@
 				<input type="hidden" name="bid" value="${book.bid}"/>
 <%--  				我要借阅：<input id="cnt" style="width: 40px;text-align: center;" type="text" name="quantity" value="1"/>件--%>
   			</form>
-  			<a id="btn" href="javascript:$('#form1').submit();"></a>
+  			<a id="btn" class="btn" href="javascript:$('#form1').submit();"></a>
   		</div>	
 	</div>
   </div>

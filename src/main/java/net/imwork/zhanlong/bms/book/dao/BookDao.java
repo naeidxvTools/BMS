@@ -11,6 +11,8 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.MapHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
+import org.junit.Test;
+import org.junit.jupiter.api.DynamicTest;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -217,5 +219,21 @@ public class BookDao
                 book.getPrinttime(),book.getBooksize(),book.getRegistrationNumber(),book.getCategory().getCid(),book.getImage_w(),
                 book.getImage_b()};
         queryRunner.update(sql, params);
+    }
+
+
+    /**
+     * 查询图书是否被借阅
+     * @param no
+     * @return
+     * @throws SQLException
+     */
+    public String queryBorrow(String no) throws SQLException
+    {
+        String sql = "select bid from t_orderitem where bid = ?";
+        String sql2 = "select bid from t_cartitem where bid = ?";
+        String number = (String) queryRunner.query(sql, new ScalarHandler(), no);
+        String number2 = (String) queryRunner.query(sql2, new ScalarHandler(), no);
+        return number == null ? number2 : number;
     }
 }

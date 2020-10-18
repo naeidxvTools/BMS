@@ -70,14 +70,14 @@ li {
     margin: 10px;
 }
 
-#btn {
+.btn {
     display: inline-block;
     background: url(../../../images/all00.png) no-repeat 0 -70px;
     height: 36px;
     width: 146px;
 }
 
-#btn:HOVER {
+.btn:HOVER {
     display: inline-block;
     background: url(../../../images/all00.png) no-repeat 0 -106px;
     height: 36px;
@@ -89,4 +89,11 @@ li {
     background-color: #f5f5f5;
     margin: 15px 0 0 50px;
     padding: 20px;
+}
+
+.kill {
+    display: inline-block;
+    background: url(../../../images/all00.png) no-repeat 0 -142px;
+    height: 36px;
+    width: 146px;
 }

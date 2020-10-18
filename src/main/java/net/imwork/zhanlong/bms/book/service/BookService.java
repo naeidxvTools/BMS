@@ -176,4 +176,14 @@ public class BookService
 
     }
 
+    public String queryBorrow(String no)
+    {
+        try
+        {
+            return bookDao.queryBorrow(no);
+        } catch (Exception e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
 }

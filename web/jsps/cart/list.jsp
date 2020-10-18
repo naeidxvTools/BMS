@@ -178,7 +178,7 @@
                                                                                               src="<c:url value='/${cartItem.book.image_b}'/>"/></a>
                     </td>
                     <td align="left" width="400px">
-                        <a href="<c:url value='/jsps/book/desc.jsp'/>"><span>${cartItem.book.bname}</span></a>
+                        <a href="<c:url value='/BookServlet?method=load&bid=${cartItem.book.bid}'/>"><span>${cartItem.book.bname}</span></a>
                     </td>
                     <td><span>&yen;<span class="currPrice">${cartItem.book.currPrice}</span></span></td>
                     <td width="100px">

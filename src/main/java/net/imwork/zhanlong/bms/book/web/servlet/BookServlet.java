@@ -213,21 +213,12 @@ public class BookServlet extends BaseServlet
     public String queryBorrow(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-//        String cartItemId = request.getParameter("cartItemId");
-//        int quantity = Integer.parseInt(request.getParameter("quantity"));
-//
-//        CartItem cartItem = cartItemService.updateQuantity(cartItemId, quantity);
-//        StringBuilder sb = new StringBuilder("{");
-//
-//        sb.append("\"quantity\"").append(":").append(cartItem.getQuantity());
-//        sb.append(",");
-//        sb.append("\"subtotal\"").append(":").append(cartItem.getSubtotal());
-//
-//        sb.append("}");
-//        response.getWriter().print(sb);
         String no = request.getParameter("no");
+        System.out.println("no = " + no);
+        String queryBorrow = bookService.queryBorrow(no);
+        System.out.println("queryBorrow = " + queryBorrow);
         StringBuilder sb = new StringBuilder("{");
-        sb.append("\"no\"").append(":").append("\"").append(no).append("\"");
+        sb.append("\"no\"").append(":").append("\"").append(queryBorrow).append("\"");
         sb.append("}");
         response.getWriter().print(sb);
 
