@@ -56,29 +56,6 @@
             });
 
 
-            // 给jia、jian添加事件
-            $(".jian").click(function ()
-            {
-                let cartItemId = $(this).attr("id").substring(0, 32);
-                let quantity = Number($("#" + cartItemId + "Quantity").val());
-                if (quantity == 1)
-                {
-                    if (confirm("您是否真要删除该条目？"))
-                    {
-						location = "/BMS/CartItemServlet?method=batchDelete&cartItemIds=" + cartItemId;
-                    }
-                } else
-                {
-                    sendUpdateQuantity(cartItemId, quantity - 1);
-                }
-            });
-            $(".jia").click(function ()
-            {
-                let cartItemId = $(this).attr("id").substring(0, 32);
-                let quantity = Number($("#" + cartItemId + "Quantity").val());
-				sendUpdateQuantity(cartItemId, quantity + 1);
-            });
-
             // 异步请求，修改数量
             function sendUpdateQuantity(cartItemId, quantity)
             {

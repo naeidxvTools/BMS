@@ -23,11 +23,74 @@
 	<link rel="stylesheet" type="text/css" href="<c:url value='/jsps/css/book/desc.css'/>">
 	<script src="<c:url value='/jsps/js/book/desc.js'/>"></script>
 	  <script type="text/javascript">
+
 		  $(function ()
 		  {
-			  alert("ok");
+			  queryBorrow();
 
+			  // 异步请求，查询数据库是否借阅
+			  function queryBorrow()
+			  {
+			  	let bianhao = $("#bianhao").text();  // ok
+
+			  	$.ajax({
+					  async:false,
+					  cache:false,
+					  url:"/BMS/BookServlet",
+					  data:{method:"queryBorrow",no:bianhao},
+					  type:"POST",
+					  dataType:"json",
+					  success: function (res)
+					  {
+						  if (res.no == bianhao)
+						  {
+							  $("#btn").click(function ()
+							  {
+							  	 alert("你选择的图书已经被接走了，请请选择其他的图书！")
+							  	 return true;
+							  });
+						  }
+					  }
+				  });
+			  }
 		  });
+
+		  //设置结算按钮样式
+		  function setJieSuan(bool)
+		  {
+			  if (bool)
+			  {// 有效状态
+				  $("#jiesuan").removeClass("kill").addClass("jiesuan");//切换样式
+				  $("#jiesuan").unbind("click");//撤消"点击无效"
+			  } else
+			  {// 无效状态
+				  $("#jiesuan").removeClass("jiesuan").addClass("kill");//切换样式
+				  $("#jiesuan").click(function ()
+				  {//使其"点击无效"
+					  return false;
+				  });
+			  }
+		  }
+
+		  //借阅
+		  function jieyue()
+		  {
+			  //1.获取所有被选中的条目的id，放到数组中
+			  let cartItemIdArray = new Array();
+			  $(":checkbox[name=checkboxBtn][checked=true]").each(function ()
+			  {
+				  cartItemIdArray.push($(this).val());//把复选框的值添加到数组中
+			  });
+			  //2.把数组的值toString()，然后赋值给表单的cartItemIds这个hidden
+			  $("#cartItemIds").val(cartItemIdArray.toString());
+			  //把总计的值，也保存到表单中
+			  $("#hiddenTotal").val($("#total").text());
+
+			  //3.提交这个表单
+			  $("#jieSuanForm").submit();
+		  }
+
+
 	  </script>
   </head>
   
@@ -38,7 +101,7 @@
     <div class="divBookDesc">
 	    <ul>
 	    	<li>图书编号：${book.bid}</li>
-			<li>登记编号：${book.registrationNumber}</li>
+			<li>登记编号：<div id="bianhao">${book.registrationNumber}</div></li>
 	    </ul>
 		<hr class="hr1"/>
 		<table>

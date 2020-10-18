@@ -1,5 +1,6 @@
 package net.imwork.zhanlong.bms.book.web.servlet;
 
+import net.imwork.zhanlong.bms.cart.domain.CartItem;
 import net.imwork.zhanlong.commons.CommonUtils;
 import net.imwork.zhanlong.bms.book.domain.Book;
 import net.imwork.zhanlong.bms.book.service.BookService;
@@ -201,5 +202,36 @@ public class BookServlet extends BaseServlet
         return "f:/jsps/book/desc.jsp";
     }
 
+    /**
+     * 查询数据库是否借阅
+     * @param request
+     * @param response
+     * @return
+     * @throws ServletException
+     * @throws IOException
+     */
+    public String queryBorrow(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException
+    {
+//        String cartItemId = request.getParameter("cartItemId");
+//        int quantity = Integer.parseInt(request.getParameter("quantity"));
+//
+//        CartItem cartItem = cartItemService.updateQuantity(cartItemId, quantity);
+//        StringBuilder sb = new StringBuilder("{");
+//
+//        sb.append("\"quantity\"").append(":").append(cartItem.getQuantity());
+//        sb.append(",");
+//        sb.append("\"subtotal\"").append(":").append(cartItem.getSubtotal());
+//
+//        sb.append("}");
+//        response.getWriter().print(sb);
+        String no = request.getParameter("no");
+        StringBuilder sb = new StringBuilder("{");
+        sb.append("\"no\"").append(":").append("\"").append(no).append("\"");
+        sb.append("}");
+        response.getWriter().print(sb);
+
+        return null;
+    }
 
 }
