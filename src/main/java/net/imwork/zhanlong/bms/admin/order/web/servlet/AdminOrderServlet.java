@@ -187,5 +187,30 @@ public class AdminOrderServlet extends BaseServlet
         return "f:/adminjsps/msg.jsp";
     }
 
+    public String remove(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException
+    {
+        String bid = request.getParameter("bid");
+        orderService.remove(bid);
+        return findAll(request,response);
+    }
+
+    /**
+     * 批量删除
+     * @param request
+     * @param response
+     * @return
+     * @throws ServletException
+     * @throws IOException
+     */
+    public String batchDelete(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException
+    {
+        String cartItemIds = request.getParameter("cartItemIds");
+
+        orderService.batchDelete(cartItemIds);
+
+        return findAll(request,response);
+    }
 }
 

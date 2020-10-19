@@ -158,4 +158,35 @@ public class OrderService
         }
     }
 
+    public void remove(String bid)
+    {
+        try
+        {
+            JdbcUtils.beginTransaction();
+            orderDao.remove(bid);
+            JdbcUtils.commitTransaction();
+        } catch (SQLException e)
+        {
+            try
+            {
+                JdbcUtils.rollbackTransaction();
+            } catch (SQLException ex){}
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * 批量删除
+     * @param cartItemIds
+     */
+    public void batchDelete(String cartItemIds)
+    {
+        try
+        {
+            orderDao.batchDelete(cartItemIds);
+        } catch (SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
 }

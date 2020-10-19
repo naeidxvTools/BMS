@@ -13,6 +13,7 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.MapListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
+import org.junit.Test;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -239,4 +240,20 @@ public class OrderDao
         return orderItem;
     }
 
+    public void remove(String bid) throws SQLException
+    {
+        String sql = "delete from t_orderitem where bid=?";
+        queryRunner.update(sql, bid);
+    }
+
+    public void batchDelete(String cartItemIds) throws SQLException
+    {
+        Object[] cartItemIdArray = cartItemIds.split(",");
+
+        //String whereSql = toWhereSql(cartItemIdArray.length);
+        //String sql = "delete from t_cartitem where " + whereSql;
+
+        //queryRunner.update(sql, cartItemIdArray);//其中cartItemIdArray必须是Object类型的数组
+
+    }
 }
