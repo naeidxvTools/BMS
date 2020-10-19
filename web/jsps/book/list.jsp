@@ -44,7 +44,7 @@
                 <p><span>作者：</span><a href="${authorUrl}" name='P_zz' title='${book.author}'>${book.author}</a></p>
                 <p class="publishing"><span>出 版 社：</span><a href="<c:url value='/BookServlet?method=findByPress&press=${book.press}'/>">${book.press}</a></p>
                 <p class="publishing_time"><span>出版时间：</span>${book.publishtime}</p>
-                <p class="price"><span class="price_n">定价：&yen;${book.currPrice}</span></p>
+                <p class="price"><span class="price_n">定价：&yen;${book.price}</span></p>
             </div>
         </li>
     </c:forEach>

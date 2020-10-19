@@ -31,7 +31,7 @@
 			  // 异步请求，查询数据库是否借阅
 			  function queryBorrow()
 			  {
-				let bookNo = $("#bookNO").text();
+				let bookNo = $("#bookNo").text();
 			  	$.ajax({
 					  async:false,
 					  cache:false,
@@ -43,17 +43,9 @@
 					  {
 						  if (res.no == bookNo)
 						  {
-						  	/*
-								$("#jiesuan").removeClass("jiesuan").addClass("kill");//切换样式
-								$("#jiesuan").click(function ()
-								{//使其"点击无效"
-									return false;
-								});
-						  	 */
 							  $("#btn").removeClass("btn").addClass("kill");//切换样式
 							  $("#btn").click(function ()
 							  {
-							  	 alert("你选择的图书已经被接走了，请请选择其他的图书！");
 							  	 return false;
 							  });
 						  }
@@ -107,8 +99,8 @@
     <img align="top" src="<c:url value='/${book.image_w}'/>" class="img_image_w"/>
     <div class="divBookDesc">
 	    <ul>
-			<li>图书编号：<div id="bookNO">${book.bid}</div></li>
-			<li>登记编号：<div id="bianhao">${book.registrationNumber}</div></li>
+			<li>图书编号：<span id="bookNo">${book.bid}</span></li>
+			<li>登记编号：<span id="bianhao">${book.registrationNumber}</span></li>
 	    </ul>
 		<hr class="hr1"/>
 		<table>

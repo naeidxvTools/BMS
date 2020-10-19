@@ -69,7 +69,6 @@ public class AdminBookServlet extends BaseServlet
         Book book = CommonUtils.mapToBean(map, Book.class);
         Category category = CommonUtils.mapToBean(map, Category.class);
         book.setCategory(category);
-
         bookService.edit(book);
         request.setAttribute("msg","修改图书成功!");
         return "f:/adminjsps/msg.jsp";

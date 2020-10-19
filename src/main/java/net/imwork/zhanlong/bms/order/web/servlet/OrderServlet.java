@@ -194,6 +194,8 @@ public class OrderServlet extends BaseServlet
 
         //5.保存订单，转发到ordersucc.jsp
         request.setAttribute("order", order);
+        System.out.println(".............."+order.getOwner());
+
         return "f:/OrderServlet?method=myOrders";
     }
 
@@ -229,8 +231,9 @@ public class OrderServlet extends BaseServlet
         //5.给PageBean设置url，保存PageBean，转发到/jsps/book/list.jsp
         pb.setUrl(url);
 
-        request.setAttribute("pb", pb);//pb中的book里的registrationNumber='null'????
-        return "/jsps/order/list.jsp";
+        request.setAttribute("pb", pb);
+
+        return "f:/jsps/order/list.jsp";
     }
 
 }

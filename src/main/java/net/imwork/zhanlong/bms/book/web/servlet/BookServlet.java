@@ -214,9 +214,7 @@ public class BookServlet extends BaseServlet
             throws ServletException, IOException
     {
         String no = request.getParameter("no");
-        System.out.println("no = " + no);
         String queryBorrow = bookService.queryBorrow(no);
-        System.out.println("queryBorrow = " + queryBorrow);
         StringBuilder sb = new StringBuilder("{");
         sb.append("\"no\"").append(":").append("\"").append(queryBorrow).append("\"");
         sb.append("}");

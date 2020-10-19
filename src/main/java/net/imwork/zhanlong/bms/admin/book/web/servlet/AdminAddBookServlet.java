@@ -28,6 +28,7 @@ import java.util.Map;
 public class AdminAddBookServlet extends HttpServlet
 {
     private BookService bookService = new BookService();
+    @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
@@ -61,6 +62,7 @@ public class AdminAddBookServlet extends HttpServlet
                 map.put(fileItem.getFieldName(), fileItem.getString("utf-8"));
             }
         }
+
         Book book = CommonUtils.mapToBean(map, Book.class);//把Map中大部分数据封装到Book对象中
         Category category = CommonUtils.mapToBean(map, Category.class);//把Map中cid封装到Category中
         book.setCategory(category);

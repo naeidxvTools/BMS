@@ -100,8 +100,7 @@
 	<div id="book" style="float:left;">
 		<ul>
 			<li>商品编号：${book.bid}</li>
-			<li>当前价：<span class="price_n">&yen;${book.currPrice}</span></li>
-			<li>定价：<span style="text-decoration:line-through;">&yen;${book.price}</span>　折扣：<span style="color: #c30;">${book.discount}</span>折</li>
+			<li>定价：<span>&yen;${book.price}</span></li>
 		</ul>
 		<hr style="margin-left: 50px; height: 1px; color: #dcdcdc"/>
 		<table class="tab">
@@ -121,7 +120,6 @@
 			<tr>
 				<td>版次：${book.edition}</td>
 				<td>页数：${book.pageNum}</td>
-				<td>字数：${book.wordNum}</td>
 			</tr>
 			<tr>
 				<td width="180">印刷时间：${book.printtime}</td>
@@ -143,9 +141,7 @@
 			<ul>
 				<li>商品编号：${book.bid}</li>
 				<li>书名：　<input id="bname" type="text" name="bname" value="${book.bname}" style="width:500px;"/></li>
-				<li>当前价：<input id="currPrice" type="text" name="currPrice" value="${book.currPrice}" style="width:50px;"/></li>
-				<li>定价：　<input id="price" type="text" name="price" value="${book.price}" style="width:50px;"/>
-					折扣：<input id="discount" type="text" name="discount" value="${book.discount}" style="width:30px;"/>折</li>
+				<li>定价：　<input id="price" type="text" name="price" value="${book.price}" style="width:50px;"/></li>
 			</ul>
 			<hr style="margin-left: 50px; height: 1px; color: #dcdcdc"/>
 			<table class="tab">
@@ -170,7 +166,7 @@
 				<tr>
 					<td width="250px">印刷时间：<input id="printtime" type="text" name="printtime" value="${book.printtime}" style="width:100px;"/></td>
 					<td width="250px">开本：　　<input id="booksize" type="text" name="booksize" value="${book.booksize}" style="width:30px;"/></td>
-					<td>登记编号：　　<input id="paper" type="text" name="paper" value="${book.registrationNumber}" style="width:80px;"/></td>
+					<td style="width: 180px">登记编号：<input id="paper" type="text" name="registrationNumber" value="${book.registrationNumber}" style="width:80px;"/></td>
 				</tr>
 				<tr>
 					<td>

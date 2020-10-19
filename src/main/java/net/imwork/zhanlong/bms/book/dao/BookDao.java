@@ -43,7 +43,7 @@ public class BookDao
     public void edit(Book book) throws SQLException
     {
         String sql = "update t_book set bname=?,author=?, price=?,currPrice=?,discount=?,press=?,publishtime=?," +
-                "edition=?,pageNum=?,wordNum=?,printtime=?,booksize=?,registration_number=?,cid=? where bid=?";
+                "edition=?,pageNum=?,wordNum=?,printtime=?,booksize=?,registrationNumber=?,cid=? where bid=?";
         Object[] params = {book.getBname(),book.getAuthor(),book.getPrice(),book.getCurrPrice(),book.getDiscount(),
                 book.getPress(),book.getPublishtime(),book.getEdition(),book.getPageNum(),book.getWordNum(),
                 book.getPrinttime(),book.getBooksize(),book.getRegistrationNumber(),book.getCategory().getCid(),book.getBid()};
@@ -213,7 +213,7 @@ public class BookDao
     public void add(Book book) throws SQLException
     {
         String sql = "insert into t_book (bid,bname,author, price,currPrice,discount,press,publishtime,edition,pageNum,wordNum," +
-                "printtime,booksize,registration_number,cid,image_w,image_b) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                "printtime,booksize,registrationNumber,cid,image_w,image_b) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         Object[] params = {book.getBid(),book.getBname(),book.getAuthor(),book.getPrice(),book.getCurrPrice(),book.getDiscount(),
                 book.getPress(),book.getPublishtime(),book.getEdition(),book.getPageNum(),book.getWordNum(),
                 book.getPrinttime(),book.getBooksize(),book.getRegistrationNumber(),book.getCategory().getCid(),book.getImage_w(),

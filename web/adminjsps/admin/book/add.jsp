@@ -44,9 +44,7 @@
 			$("#btn").click(function ()
 			{
 				var bname = $("#bname").val();
-				var currPrice = $("#currPrice").val();
 				var price = $("#price").val();
-				var discount = $("#discount").val();
 				var author = $("#author").val();
 				var press = $("#press").val();
 				var pid = $("#pid").val();
@@ -54,15 +52,15 @@
 				var image_w = $("#image_w").val();
 				var image_b = $("#image_b").val();
 
-				if (!bname || !currPrice || !price || !discount || !author || !press || !pid || !cid || !image_w || !image_b)
+				if (!bname || !price || !author || !press || !pid || !cid || !image_w || !image_b)
 				{
-					alert("图名、当前价、定价、折扣、作者、出版社、1级分类、2级分类、大图、小图都不能为空！");
+					alert("图名、定价、作者、出版社、1级分类、2级分类、大图、小图都不能为空！");
 					return false;
 				}
 
-				if (isNaN(currPrice) || isNaN(price) || isNaN(discount))
+				if (isNaN(price))
 				{
-					alert("当前价、定价、折扣必须是合法小数！");
+					alert("定价必须是合法小数！");
 					return false;
 				}
 				$("#form").submit();
@@ -104,18 +102,15 @@
 <body>
 <div>
 	<p style="font-weight: 900; color: red;">${msg }</p>
-	<form action="<c:url value="/admin/AdminAddBookServlet"/>" enctype="multipart/form-data" method="post" id="form">
+	<form action="<c:url value='/admin/AdminAddBookServlet'/>" enctype="multipart/form-data" method="post" id="form">
 		<div>
 			<ul>
-				<li>书名：　<input id="bname" type="text" name="bname"
-							   value="Spring实战(第3版)（In Action系列中最畅销的Spring图书，近十万读者学习Spring的共同选择）" style="width:500px;"/>
+				<li>书名：  <input id="bname" type="text" name="bname"
+							   value="船舶原理" style="width:500px;"/>
 				</li>
-				<li>大图：　<input id="image_w" type="file" name="image_w"/></li>
-				<li>小图：　<input id="image_b" type="file" name="image_b"/></li>
-				<li>定价：<input id="price" type="text" name="price" value="40.7" style="width:50px;"/></li>
-				<li>当前价：　<input id="currPrice" type="text" name="currPrice" value="59.0" style="width:50px;"/>
-					折扣：<input id="discount" type="text" name="discount" value="6.9" style="width:30px;"/>折
-				</li>
+				<li>大图：  <input id="image_w" type="file" name="image_w"/></li>
+				<li>小图：  <input id="image_b" type="file" name="image_b"/></li>
+				<li>定价：  <input id="price" type="text" name="price" value="40.7" style="width:50px;"/></li>
 			</ul>
 			<hr style="margin-left: 50px; height: 1px; color: #dcdcdc"/>
 			<table>
@@ -134,16 +129,15 @@
 												style="width:100px;"/></td>
 				</tr>
 				<tr>
-					<td>版次：　　<input type="text" name="edition" id="edition" value="1" style="width:40px;"/></td>
 					<td>页数：　　<input type="text" name="pageNum" id="pageNum" value="374" style="width:50px;"/></td>
-					<td>字数：　　<input type="text" name="wordNum" id="wordNum" value="48700" style="width:80px;"/></td>
 				</tr>
 				<tr>
-					<td width="250">印刷时间：<input type="text" name="printtime" id="printtime" value="2013-6-1"
-												style="width:100px;"/></td>
 					<td width="250">开本：　　<input type="text" name="booksize" id="booksize" value="16"
 												style="width:30px;"/></td>
-					<td>纸张：　　<input type="text" name="paper" id="paper" value="胶版纸" style="width:80px;"/></td>
+				</tr>
+					<td>登记编号：<input type="text" name="registrationNumber" id="registrationNumber" value="CB-001" style="width:80px;"/></td>
+				<tr>
+
 				</tr>
 				<tr>
 					<td>
