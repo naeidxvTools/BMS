@@ -206,9 +206,9 @@ public class AdminOrderServlet extends BaseServlet
     public String batchDelete(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        String cartItemIds = request.getParameter("cartItemIds");
+        String oid = request.getParameter("oid");
 
-        orderService.batchDelete(cartItemIds);
+        orderService.batchDelete(oid);
 
         return findAll(request,response);
     }

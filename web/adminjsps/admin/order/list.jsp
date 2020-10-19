@@ -21,23 +21,7 @@
 <%--	<script type="text/javascript" src="<c:url value='/jsps/pager/pager.js'/>"></script>--%>
 	<link rel="stylesheet" type="text/css" href="<c:url value='/adminjsps/admin/css/order/list.css'/>" />
 	<link rel="stylesheet" type="text/css" href="<c:url value='/css/css.css'/>" />
-	<script src="<c:url value='/jquery/jquery-1.5.1.js'/>"></script>
-	<script type="text/javascript">
-		//批量删除
-		function batchDelete()
-		{
-			// //1.获取所有被选中条目的复选框
-			// //2.创建一数组，把所有被选中的复选框的值添加到数组中
-			// //3.指定location为CartItemServlet，参数method=batchDelete，参数cartItemIds=数组的toString()
-			// let cartItemIdArray = new Array();
-			// $(":checkbox[name=checkboxBtn][checked=true]").each(function ()
-			// {
-			// 	cartItemIdArray.push($(this).val());//把复选框的值添加到数组中
-			// });
-			// location = "/BMS/CartItemServlet?method=batchDelete&cartItemIds=" + cartItemIdArray;
-			alert("批量删除");
-		}
-	</script>
+
 </head>
 
 <body>
@@ -69,7 +53,7 @@
 				</td>
 				<td>
 					<span style="margin-left: 400px;">
-						<a href="javascript:batchDelete();">批量删除</a><br/>
+						<a href="<c:url value='/admin/AdminOrderServlet?method=batchDelete&oid=\'${order.oid}\''/>">批量删除</a><br/>
 					</span>
 
 				</td>

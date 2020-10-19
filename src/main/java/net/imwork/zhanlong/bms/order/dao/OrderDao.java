@@ -246,14 +246,15 @@ public class OrderDao
         queryRunner.update(sql, bid);
     }
 
-    public void batchDelete(String cartItemIds) throws SQLException
+    public void batchDelete(String oid) throws SQLException
     {
-        Object[] cartItemIdArray = cartItemIds.split(",");
+        queryRunner.update("delete from t_orderitem where oid = " + oid);
+        queryRunner.update("delete from t_order where oid = " + oid);
+    }
 
-        //String whereSql = toWhereSql(cartItemIdArray.length);
-        //String sql = "delete from t_cartitem where " + whereSql;
-
-        //queryRunner.update(sql, cartItemIdArray);//其中cartItemIdArray必须是Object类型的数组
-
+    @Test
+    public void method() throws SQLException
+    {
+        batchDelete("'1F8D1FFC67F141B0B653BD19321F8543'");
     }
 }

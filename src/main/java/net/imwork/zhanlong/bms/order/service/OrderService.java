@@ -177,13 +177,13 @@ public class OrderService
 
     /**
      * 批量删除
-     * @param cartItemIds
+     * @param oid
      */
-    public void batchDelete(String cartItemIds)
+    public void batchDelete(String oid)
     {
         try
         {
-            orderDao.batchDelete(cartItemIds);
+            orderDao.batchDelete(oid);
         } catch (SQLException e)
         {
             throw new RuntimeException(e);

@@ -26,31 +26,32 @@
 <body>
 <div class="divBook">
 	<ul>
-
-
 		<c:forEach items="${pb.beanList}" var="book">
 			<li>
 				<div class="inner">
-					<a class="pic" href="<c:url value='/admin/AdminBookServlet?method=load&bid=${book.bid}'/>"><img src="<c:url value='/${book.image_b}'/>" border="0"/></a>
-					<p class="price" >
-						<span class="price_n">&yen;${book.currPrice}</span>
-						<span class="price_r">&yen;${book.price}</span>
-						(<span class="price_s">${book.discount}折</span>)
-					</p>
-						<%-- url标签会自动对参数进行url编码--%>
+					<a class="pic" href="<c:url value='/admin/AdminBookServlet?method=load&bid=${book.bid}'/>"><img
+							src="<c:url value='/${book.image_b}'/>" border="0"/></a>
+					<p><a id="bname" title="${book.bname}" href="<c:url value='/admin/AdminBookServlet?method=load&bid=${book.bid}'/>">${book.bname}</a></p>
+
+						<%--url标签会自动对参数进行url编码--%>
+					<c:url var="authorUrl" value="/BookServlet">
+						<c:param name="method" value="findByAuthor"></c:param>
+						<c:param name="author" value="${book.author}"></c:param>
+					</c:url>
 					<c:url value="/admin/AdminBookServlet" var="authorUrl">
 						<c:param name="method" value="findByAuthor"/>
 						<c:param name="author" value="${book.author}"/>
 					</c:url>
+					<p><span>作者：</span><a href="${authorUrl}" name='P_zz' title='${book.author}'>${book.author}</a></p>
 					<c:url value="/admin/AdminBookServlet" var="pressUrl">
 						<c:param name="method" value="findByPress"/>
 						<c:param name="press" value="${book.press}"/>
 					</c:url>
-					<p><a id="bookname" title="${book.bname}" href="<c:url value='/admin/AdminBookServlet?method=load&bid=${book.bid}'/>">${book.bname}</a></p>
-					<p><a href="${authorUrl}" name='P_zz' title='${book.author}'>${book.author}</a></p>
 					<p class="publishing">
 						<span>出版社：</span><a href="${pressUrl}">${book.press}</a>
 					</p>
+					<p class="publishing_time"><span>出版时间：</span>${book.publishtime}</p>
+					<p class="price"><span class="price_n">定价：&yen;${book.currPrice}</span></p>
 				</div>
 			</li>
 		</c:forEach>
