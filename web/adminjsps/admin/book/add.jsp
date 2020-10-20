@@ -110,18 +110,18 @@
 				</li>
 				<li>大图：  <input id="image_w" type="file" name="image_w"/></li>
 				<li>小图：  <input id="image_b" type="file" name="image_b"/></li>
-				<li>定价：  <input id="price" type="text" name="price" value="40.7" style="width:50px;"/></li>
+				<li>定价：  <input id="price" type="text" name="price" value="28.8" style="width:50px;"/></li>
 			</ul>
 			<hr style="margin-left: 50px; height: 1px; color: #dcdcdc"/>
 			<table>
 				<tr>
 					<td colspan="3">
-						作者：　　<input type="text" id="author" name="author" value="Craig Walls" style="width:150px;"/>
+						作者：　　<input type="text" id="author" name="author" value="张三" style="width:150px;"/>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="3">
-						出版社：　<input type="text" name="press" id="press" value="人民邮电出版社" style="width:200px;"/>
+						出版社：　<input type="text" name="press" id="press" value="哈尔滨工程大学出版社" style="width:200px;"/>
 					</td>
 				</tr>
 				<tr>

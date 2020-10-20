@@ -57,7 +57,7 @@ function validateLoginname()
     //1.非空校验
     if (!value)
     {
-        $("#" + id + "Error").text("（客户端）用户名不能为空!");
+        $("#" + id + "Error").text("用户名不能为空!");
         showError($("#" + id + "Error"));
         return false;
     }
@@ -65,7 +65,7 @@ function validateLoginname()
     //2.长度校验
     if (value.length < 3 || value.length > 20)
     {
-        $("#" + id + "Error").text("（客户端）用户名必须在3-20之间!");
+        $("#" + id + "Error").text("用户名必须在3-20之间!");
         showError($("#" + id + "Error"));
         return false;
     }
@@ -81,7 +81,7 @@ function validateLoginname()
         {
             if (!res)
             {
-                $("#" + id + "Error").text("（异步请求）用户名已经注册!");
+                $("#" + id + "Error").text("用户名已经注册!");
                 showError($("#" + id + "Error"));
                 return false;
             }
@@ -99,7 +99,7 @@ function validateLoginpass()
     //1.非空校验
     if (!value)
     {
-        $("#" + id + "Error").text("（客户端）密码不能为空!");
+        $("#" + id + "Error").text("密码不能为空!");
         showError($("#" + id + "Error"));
         return false;
     }
@@ -107,7 +107,7 @@ function validateLoginpass()
     //2.长度校验
     if (value.length < 3 || value.length > 20)
     {
-        $("#" + id + "Error").text("（客户端）密码必须在3-20之间!");
+        $("#" + id + "Error").text("密码必须在3-20之间!");
         showError($("#" + id + "Error"));
         return false;
     }
@@ -122,7 +122,7 @@ function validateReloginpass()
     //1.非空校验
     if (!value)
     {
-        $("#" + id + "Error").text("（客户端）确认密码不能为空!");
+        $("#" + id + "Error").text("确认密码不能为空!");
         showError($("#" + id + "Error"));
         return false;
     }
@@ -130,7 +130,7 @@ function validateReloginpass()
     //2.两次输入是否一致校验
     if (value != $("#loginpass").val())
     {
-        $("#" + id + "Error").text("（客户端）两次密码输入不一致!");
+        $("#" + id + "Error").text("两次密码输入不一致!");
         showError($("#" + id + "Error"));
         return false;
     }
@@ -145,7 +145,7 @@ function validateEmail()
     //1.非空校验
     if (!value)
     {
-        $("#" + id + "Error").text("（客户端）email不能为空!");
+        $("#" + id + "Error").text("email不能为空!");
         showError($("#" + id + "Error"));
         return false;
     }
@@ -153,7 +153,7 @@ function validateEmail()
     //2.email格式校验
     if (!/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/.test(value))
     {
-        $("#" + id + "Error").text("（客户端）email格式不正确!");
+        $("#" + id + "Error").text("email格式不正确!");
         showError($("#" + id + "Error"));
         return false;
     }
@@ -170,7 +170,7 @@ function validateEmail()
         {
             if (!res)
             {
-                $("#" + id + "Error").text("（异步请求）Email已经注册!");
+                $("#" + id + "Error").text("Email已经注册!");
                 showError($("#" + id + "Error"));
                 return false;
             }
@@ -187,7 +187,7 @@ function validateVerifyCode()
     //1.非空校验
     if (!value)
     {
-        $("#" + id + "Error").text("（客户端）验证码不能为空!");
+        $("#" + id + "Error").text("验证码不能为空!");
         showError($("#" + id + "Error"));
         return false;
     }
@@ -195,7 +195,7 @@ function validateVerifyCode()
     //2.长度校验
     if (value.length != 4)
     {
-        $("#" + id + "Error").text("（客户端）错误的验证码!");
+        $("#" + id + "Error").text("错误的验证码!");
         showError($("#" + id + "Error"));
         return false;
     }
@@ -212,7 +212,7 @@ function validateVerifyCode()
         {
             if (!res)
             {
-                $("#" + id + "Error").text("（异步请求）验证码错误!");
+                $("#" + id + "Error").text("验证码错误!");
                 showError($("#" + id + "Error"));
                 return false;
             }

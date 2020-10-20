@@ -3,6 +3,7 @@ package net.imwork.zhanlong.bms.order.service;
 import net.imwork.zhanlong.bms.order.dao.OrderDao;
 import net.imwork.zhanlong.bms.order.domain.Order;
 import net.imwork.zhanlong.bms.pager.PageBean;
+import net.imwork.zhanlong.bms.user.domain.User;
 import net.imwork.zhanlong.jdbc.JdbcUtils;
 
 import java.sql.SQLException;
@@ -188,5 +189,24 @@ public class OrderService
         {
             throw new RuntimeException(e);
         }
+    }
+
+    public User getUserName(String oid)
+    {
+        try
+        {
+            JdbcUtils.beginTransaction();
+            User user = orderDao.getUserName(oid);
+            JdbcUtils.commitTransaction();
+            return user;
+        } catch (SQLException e)
+        {
+            try
+            {
+                JdbcUtils.rollbackTransaction();
+            } catch (SQLException ex){}
+            throw new RuntimeException(e);
+        }
+
     }
 }

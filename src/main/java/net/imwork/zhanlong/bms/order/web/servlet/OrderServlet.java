@@ -194,7 +194,6 @@ public class OrderServlet extends BaseServlet
 
         //5.保存订单，转发到ordersucc.jsp
         request.setAttribute("order", order);
-        System.out.println(".............."+order.getOwner());
 
         return "f:/OrderServlet?method=myOrders";
     }

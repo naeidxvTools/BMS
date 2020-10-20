@@ -29,7 +29,7 @@
 <div class="divMain">
 	<div class="title">
 		<div style="margin-top:7px;">
-			<span style="margin-left: 50px;margin-right: 725px;">商品信息</span>
+			<span style="margin-left: 50px;margin-right: 725px;">借阅信息</span>
 			<span style="margin-left: 100px;">操作</span>
 		</div>
 	</div>
@@ -43,6 +43,7 @@
 				<td width="320px">借阅号：<a  href="<c:url value='/admin/AdminOrderServlet?method=load&oid=${order.oid}'/>">${order.oid}</a></td>
 				<td width="200px">借阅时间：${order.ordertime}</td>
 				<td>借阅人：${order.owner.loginname}</td>
+
 			</tr>
 			<tr style="padding-top: 10px; padding-bottom: 10px;">
 

@@ -263,56 +263,56 @@ public class UserServlet extends BaseServlet
         String loginname = user.getLoginname();
         if (loginname == null || loginname.trim().isEmpty())
         {
-            errors.put("loginname", "（服务端）用户名不能为空!");
+            errors.put("loginname", "用户名不能为空!");
         } else if (loginname.length() < 3 || loginname.length() > 20)
         {
-            errors.put("loginname", "（服务端）用户名长度必须在3-20之间!");
+            errors.put("loginname", "用户名长度必须在3-20之间!");
         } else if (!userService.ajaxValidateLoginname(loginname))
         {
-            errors.put("loginname", "（服务端）用户名已经注册!");
+            errors.put("loginname", "用户名已经注册!");
         }
 
         //2.校验登录密码
         String loginpass = user.getLoginpass();
         if (loginpass == null || loginpass.trim().isEmpty())
         {
-            errors.put("loginpass", "（服务端）密码不能为空!");
+            errors.put("loginpass", "密码不能为空!");
         } else if (loginpass.length() < 3 || loginpass.length() > 20)
         {
-            errors.put("loginpass", "（服务端）密码长度必须在3-20之间!");
+            errors.put("loginpass", "密码长度必须在3-20之间!");
         }
 
         //3.校验确认密码
         String reloginpass = user.getReloginpass();
         if (reloginpass == null || reloginpass.trim().isEmpty())
         {
-            errors.put("reloginpass", "（服务端）确认密码不能为空!");
+            errors.put("reloginpass", "确认密码不能为空!");
         } else if (!reloginpass.equals(loginpass))
         {
-            errors.put("reloginpass", "（服务端）两次输入不一致!");
+            errors.put("reloginpass", "两次输入不一致!");
         }
 
         //4.校验Email
         String email = user.getEmail();
         if (email == null || email.trim().isEmpty())
         {
-            errors.put("email", "（服务端）email不能为空!");
+            errors.put("email", "email不能为空!");
         } else if (!email.matches("^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\\.[a-zA-Z0-9_-]{2,3}){1,2})$"))
         {
-            errors.put("email", "（服务端）Email格式错误!");
+            errors.put("email", "Email格式错误!");
         } else if (!userService.ajaxValidateEmail(email))
         {
-            errors.put("email", "（服务端）email已经注册!");
+            errors.put("email", "email已经注册!");
         }
 
         //5.校验验证码
         String verifyCode = user.getVerifyCode();
         if (verifyCode == null || verifyCode.trim().isEmpty())
         {
-            errors.put("verifyCode", "（服务端）验证码不能为空!");
+            errors.put("verifyCode", "验证码不能为空!");
         } else if (!((String)request.getSession().getAttribute("verifyCode")).equalsIgnoreCase(verifyCode))
         {
-            errors.put("reloginpass", "（服务端）验证码错误!");
+            errors.put("reloginpass", "验证码错误!");
         }
 
         return errors;

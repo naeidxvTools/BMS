@@ -3,6 +3,7 @@ package net.imwork.zhanlong.bms.admin.order.web.servlet;
 import net.imwork.zhanlong.bms.order.domain.Order;
 import net.imwork.zhanlong.bms.order.service.OrderService;
 import net.imwork.zhanlong.bms.pager.PageBean;
+import net.imwork.zhanlong.bms.user.domain.User;
 import net.imwork.zhanlong.servlet.BaseServlet;
 
 import javax.servlet.ServletException;
@@ -78,8 +79,17 @@ public class AdminOrderServlet extends BaseServlet
 
         //5.给PageBean设置url，保存PageBean，转发到/jsps/book/list.jsp
         pb.setUrl(url);
+
+        for (int i = 0; i < pb.getBeanList().size(); i++)
+        {
+            Order o = pb.getBeanList().get(i);
+            String oid = o.getOid();
+            User user = orderService.getUserName("'"+oid+"'");
+            o.setOwner(user);
+        }
+
         request.setAttribute("pb", pb);
-        System.out.println("ok");
+
         return "f:/adminjsps/admin/order/list.jsp";
     }
 
@@ -110,7 +120,6 @@ public class AdminOrderServlet extends BaseServlet
         //5.给PageBean设置url，保存PageBean，转发到/jsps/book/list.jsp
         pb.setUrl(url);
         request.setAttribute("pb", pb);
-        System.out.println("ok");
         return "f:/adminjsps/admin/order/list.jsp";
     }
 

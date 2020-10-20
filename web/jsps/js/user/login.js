@@ -116,12 +116,12 @@ function validateVerifyCode()
     if (!value)
     {//非空校验
         $("#verifyCodeError").css("display", "");
-        $("#verifyCodeError").text("验证码不能为空！(login.js)");
+        $("#verifyCodeError").text("验证码不能为空！");
         bool = false;
     } else if (value.length != 4)
     {//长度不为4就是错误的
         $("#verifyCodeError").css("display", "");
-        $("#verifyCodeError").text("错误的验证码！(login.js)");
+        $("#verifyCodeError").text("错误的验证码！");
         bool = false;
     } else
     {//验证码是否正确
@@ -137,7 +137,7 @@ function validateVerifyCode()
                 if (!flag)
                 {
                     $("#verifyCodeError").css("display", "");
-                    $("#verifyCodeError").text("(异步)错误的验证码！");
+                    $("#verifyCodeError").text("错误的验证码！");
                     bool = false;
                 }
             }

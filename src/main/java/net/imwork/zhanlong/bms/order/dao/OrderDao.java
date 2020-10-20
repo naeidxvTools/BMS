@@ -1,5 +1,6 @@
 package net.imwork.zhanlong.bms.order.dao;
 
+import net.imwork.zhanlong.bms.user.domain.User;
 import net.imwork.zhanlong.commons.CommonUtils;
 import net.imwork.zhanlong.bms.book.domain.Book;
 import net.imwork.zhanlong.bms.order.domain.Order;
@@ -9,16 +10,14 @@ import net.imwork.zhanlong.bms.pager.PageBean;
 import net.imwork.zhanlong.bms.pager.PageConstants;
 import net.imwork.zhanlong.jdbc.TxQueryRunner;
 import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.handlers.BeanHandler;
-import org.apache.commons.dbutils.handlers.BeanListHandler;
-import org.apache.commons.dbutils.handlers.MapListHandler;
-import org.apache.commons.dbutils.handlers.ScalarHandler;
+import org.apache.commons.dbutils.handlers.*;
 import org.junit.Test;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Handler;
 
 public class OrderDao
 {
@@ -252,9 +251,14 @@ public class OrderDao
         queryRunner.update("delete from t_order where oid = " + oid);
     }
 
-    @Test
-    public void method() throws SQLException
+    public User getUserName(String oid) throws SQLException
     {
-        batchDelete("'1F8D1FFC67F141B0B653BD19321F8543'");
+        User user = new User();
+        String sqlUsername = "select uid from t_order where oid=" + oid;
+        Map<String, Object> query = queryRunner.query(sqlUsername, new MapHandler());
+        Map<String, Object> uid = queryRunner.query("select * from t_user where uid="+"'"+query.get("uid")+"'", new MapHandler());
+
+        user.setLoginname((String)uid.get("loginname"));
+        return user;
     }
 }
