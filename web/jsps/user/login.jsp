@@ -21,7 +21,7 @@
         {
             var loginname = window.decodeURI("${cookie.loginname.value}");
 
-            if("${requestScope.user.loginname}")
+            if ("${requestScope.user.loginname}")
             {
                 loginname = "${requestScope.user.loginname}";
             }
@@ -32,62 +32,59 @@
 </head>
 <body>
 <div class="main">
-    <div>
-        <div class="imageDiv"><img class="img" src="<c:url value='/images/zj.png'/>"/></div>
-        <div class="login1">
-            <div class="login2">
-                <div class="loginTopDiv">
-                    <img id="imgLogo" src="<c:url value='/images/zan.gif'/>" width="100px"/>
-                    <span class="loginTop">会员登录</span>
-                    <span><a href="<c:url value='/jsps/user/regist.jsp'/>" class="registBtn"></a></span>
-                </div>
-                <div>
-                    <form target="_top" action="<c:url value='/UserServlet'/>" method="post" id="loginForm">
-                        <input type="hidden" name="method" value="login"/>
-                        <table>
-                            <tr>
-                                <td width="50"></td>
-                                <td><label class="error" id="msg">${msg}</label></td>
-                            </tr>
-                            <tr>
-                                <td width="50">用户名</td>
-                                <td><input class="input" type="text" name="loginname" id="loginname"/></td>
-                            </tr>
-                            <tr>
-                                <td height="20">&nbsp;</td>
-                                <td><label id="loginnameError" class="error"></label></td>
-                            </tr>
-                            <tr>
-                                <td>密　码</td>
-                                <td><input class="input" type="password" name="loginpass" id="loginpass" value="${user.loginpass}"/></td>
-                            </tr>
-                            <tr>
-                                <td height="20">&nbsp;</td>
-                                <td><label id="loginpassError" class="error"></label></td>
-                            </tr>
-                            <tr>
-                                <td>验证码</td>
-                                <td>
-                                    <input class="input yzm" type="text" name="verifyCode" id="verifyCode" value="${user.verifyCode}"/>
-                                    <img id="imgVerifyCode" src="<c:url value='/VerifyCodeServlet'/>"/>
-                                    <a id="aVerifyCode" href="javascript:_change();">换张图</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td height="20px">&nbsp;</td>
-                                <td><label id="verifyCodeError" class="error"></label></td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td align="left">
-                                    <input type="image" id="submit" src="<c:url value='/images/login1.jpg'/>"
-                                           class="loginBtn"/>
-                                </td>
-                            </tr>
-                        </table>
-                    </form>
-                </div>
-            </div>
+    <div class="login">
+        <div class="loginTopDiv">
+            <img id="imgLogo" src="<c:url value='/images/zan.gif'/>" width="100px"/>
+            <span class="loginTop">用户登录</span>
+            <span><a href="<c:url value='/jsps/user/regist.jsp'/>" class="registBtn"></a></span>
+        </div>
+        <div>
+            <form target="_top" action="<c:url value='/UserServlet'/>" method="post" id="loginForm">
+                <input type="hidden" name="method" value="login"/>
+                <table>
+                    <tr>
+                        <td width="50"></td>
+                        <td><label class="error" id="msg">${msg}</label></td>
+                    </tr>
+                    <tr>
+                        <td width="50">用户名</td>
+                        <td><input class="input" type="text" name="loginname" id="loginname"/></td>
+                    </tr>
+                    <tr>
+                        <td height="20">&nbsp;</td>
+                        <td><label id="loginnameError" class="error"></label></td>
+                    </tr>
+                    <tr>
+                        <td>密　码</td>
+                        <td><input class="input" type="password" name="loginpass" id="loginpass"
+                                   value="${user.loginpass}"/></td>
+                    </tr>
+                    <tr>
+                        <td height="20">&nbsp;</td>
+                        <td><label id="loginpassError" class="error"></label></td>
+                    </tr>
+                    <tr>
+                        <td>验证码</td>
+                        <td>
+                            <input class="input yzm" type="text" name="verifyCode" id="verifyCode"
+                                   value="${user.verifyCode}"/>
+                            <img id="imgVerifyCode" src="<c:url value='/VerifyCodeServlet'/>"/>
+                            <a id="aVerifyCode" href="javascript:_change();">换张图</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="20px">&nbsp;</td>
+                        <td><label id="verifyCodeError" class="error"></label></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td align="left">
+                            <input type="image" id="submit" src="<c:url value='/images/login1.jpg'/>"
+                                   class="loginBtn"/>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
     </div>
 </div>

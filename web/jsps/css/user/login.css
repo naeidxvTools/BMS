@@ -8,9 +8,6 @@ body {
     margin: 0 auto;
 }
 
-.imageDiv {
-    float: left;
-}
 
 .img {
     width: 300px;
@@ -20,19 +17,13 @@ body {
     width: 45px;
 }
 
-.login1 {
+.login {
     width: 440px;
     height: 370px;
     border: 1px solid #d1d1cf;
-    float: left;
+    margin: 0 auto;
+    /*float: right;*/
     background-color: #f4f4f4;
-}
-
-.login2 {
-    width: 436px;
-    height: 366px;
-    margin: 2px;
-    background-color: #ffffff;
 }
 
 .loginTopDiv {
