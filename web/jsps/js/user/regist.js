@@ -63,9 +63,9 @@ function validateLoginname()
     }
 
     //2.长度校验
-    if (value.length < 3 || value.length > 20)
+    if (value.length < 2 || value.length > 20)
     {
-        $("#" + id + "Error").text("用户名必须在3-20之间!");
+        $("#" + id + "Error").text("用户名必须在2-20之间!");
         showError($("#" + id + "Error"));
         return false;
     }

@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script type="text/javascript">
-    function _go()
+    function _go(tp)
     {
         var pc = $("#pageCode").val();//获取文本框中的当前页码
         if (!/^[1-9]\d*$/.test(pc))
@@ -9,7 +9,7 @@
             alert('请输入正确的页码！');
             return;
         }
-        if (pc > 10)
+        if (pc > tp)
         {//判断当前页码是否大于最大页
             alert('请输入正确的页码！');
             return;
@@ -87,6 +87,6 @@
         <span>到</span>
         <input type="text" class="inputPageCode" id="pageCode" value="${pb.pc}"/>
         <span>页</span>
-        <a href="javascript:_go();" class="aSubmit">确定</a>
+        <a href="javascript:_go(${pb.tp});" class="aSubmit">确定</a>
     </div>
 </div>

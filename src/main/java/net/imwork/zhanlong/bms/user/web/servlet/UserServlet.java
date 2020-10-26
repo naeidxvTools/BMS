@@ -86,7 +86,6 @@ public class UserServlet extends BaseServlet
     {
         //1.封装表单数据到User
         User user = CommonUtils.mapToBean(request.getParameterMap(), User.class);
-
         //2.校验表单数据
         Map<String, String> errors = validateLogin(user, request);
         if (!errors.isEmpty())
